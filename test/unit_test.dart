@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:counter_tdd_practice/features/counter/counter.dart';
 
 void main() {
   group('Counter', () {
