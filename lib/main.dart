@@ -1,3 +1,5 @@
+import 'package:counter_tdd_practice/features/counter/domain/usecases/counter_usecases.dart';
+import 'package:counter_tdd_practice/features/counter/presentation/counter_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,28 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomePage(title: 'Counter App'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('CounterApp'),
+    return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
+      home: CounterScreen(counterUseCases: CounterUseCases()),
     );
   }
 }
