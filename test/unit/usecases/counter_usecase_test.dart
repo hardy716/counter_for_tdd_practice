@@ -4,15 +4,15 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:counter_tdd_practice/features/counter/domain/usecases/counter_usecases.dart';
 
 void main() {
+  late CounterEntity counterEntity;
+  late CounterUseCases counterUseCases;
+
+  setUp(() {
+    counterEntity = CounterEntity(0);
+    counterUseCases = CounterUseCases();
+  });
+
   group('CounterUseCases', () {
-    late CounterEntity counterEntity;
-    late CounterUseCases counterUseCases;
-
-    setUp(() {
-      counterEntity = CounterEntity(0);
-      counterUseCases = CounterUseCases();
-    });
-
     test('value should be incremented', () {
       counterUseCases.increment(counterEntity);
       expect(counterEntity.value, 1);
